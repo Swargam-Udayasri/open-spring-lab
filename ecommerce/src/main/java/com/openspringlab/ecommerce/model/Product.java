@@ -17,7 +17,6 @@ public class Product {
         this.name = name;
         this.price = price;
     }
-
     // Getters and setters
     public String getName() {
         return name;

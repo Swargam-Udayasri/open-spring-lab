@@ -19,9 +19,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/products") // Base path for all endpoints
 public class ProductController {
 
-    private List<Product> products = new ArrayList<>(); // In-memory storage
-
-    // POST endpoint with validation
+    private List<Product> products = new ArrayList<>(); 
     @PostMapping
     public ResponseEntity<String> createProduct(@Valid @RequestBody Product product, BindingResult result) {
         if(result.hasErrors()) {
@@ -33,7 +31,6 @@ public class ProductController {
         products.add(product);
         return ResponseEntity.ok("Product is valid: " + product.getName() + " - " + product.getPrice());
     }
-
     // GET endpoint
     @GetMapping
     public List<Product> getProducts() {
